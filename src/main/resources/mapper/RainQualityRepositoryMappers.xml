@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="repository.RainQualityRepository">
+
+    <resultMap id="RainQualityResultMap" type="entity.RainQuality">
+        <id property="id" column="id" javaType="int"/>
+        <result property="districtName" column="districtName"/>
+        <result property="monitorTime" column="monitorTime" javaType="java.sql.Date"/>
+        <result property="rain" column="rain" javaType="int"/>
+        <result property="monitoringStation" column="monitoringStation"/>
+        <result property="monitoringAddress" column="monitoringAddress"/>
+    </resultMap>
+    <select id="getAllRainQuality" resultMap="RainQualityResultMap">
+        select * from rain
+    </select>
+</mapper>
